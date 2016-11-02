@@ -24,7 +24,7 @@ class FunctionalTests: XCTestCase {
             let pbx = prefix.appending(component: "Library.xcodeproj")
             XCTAssertDirectoryExists(pbx)
             XCTAssertXcodeBuild(project: pbx)
-            let build = prefix.appending(components: "build", "Debug")
+            let build = prefix.appending(components: "build", "Release")
             XCTAssertDirectoryExists(build.appending(component: "Library.framework"))
         }
 #endif
@@ -38,7 +38,7 @@ class FunctionalTests: XCTestCase {
             let pbx = prefix.appending(component: "SwiftCMixed.xcodeproj")
             XCTAssertDirectoryExists(pbx)
             XCTAssertXcodeBuild(project: pbx)
-            let build = prefix.appending(components: "build", "Debug")
+            let build = prefix.appending(components: "build", "Release")
             XCTAssertDirectoryExists(build.appending(component: "SeaLib.framework"))
             XCTAssertFileExists(build.appending(component: "SeaExec"))
             XCTAssertFileExists(build.appending(component: "CExec"))
@@ -72,7 +72,7 @@ class FunctionalTests: XCTestCase {
             let pbx = moduleUser.appending(component: "SystemModuleUser.xcodeproj")
             XCTAssertDirectoryExists(pbx)
             XCTAssertXcodeBuild(project: pbx)
-            XCTAssertFileExists(moduleUser.appending(components: "build", "Debug", "SystemModuleUser"))
+            XCTAssertFileExists(moduleUser.appending(components: "build", "Release", "SystemModuleUser"))
         }
 #endif
     }
@@ -84,7 +84,7 @@ class FunctionalTests: XCTestCase {
             let pbx = prefix.appending(component: "PackageWithNonc99NameModules.xcodeproj")
             XCTAssertDirectoryExists(pbx)
             XCTAssertXcodeBuild(project: pbx)
-            let build = prefix.appending(components: "build", "Debug")
+            let build = prefix.appending(components: "build", "Release")
             XCTAssertDirectoryExists(build.appending(component: "A_B.framework"))
             XCTAssertDirectoryExists(build.appending(component: "B_C.framework"))
             XCTAssertDirectoryExists(build.appending(component: "C_D.framework"))

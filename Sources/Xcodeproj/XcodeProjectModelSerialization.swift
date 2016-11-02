@@ -320,7 +320,7 @@ extension Xcode.BuildSettingsTable: PropertyListSerializable {
         // FIXME: What is this, and why are we setting it?
         dict["defaultConfigurationIsVisible"] = .string("0")
         // FIXME: Should we allow this to be set in the model?
-        dict["defaultConfigurationName"] = .string("Debug")
+        dict["defaultConfigurationName"] = .string("Release")
         return dict
     }
 }
